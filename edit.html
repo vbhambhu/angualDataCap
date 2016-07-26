@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title></title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/backend.css">
+</head>
+<body ng-app="dynForm">
+<div class="container-fluid">
+
+
+
+<hr>
+<div ng-controller="cubeCreateCtrl">
+
+
+
+<div class="row">
+  <div class="col-md-2">
+
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('text')">Single text box</button></p>
+<!--   <p><button class="btn btn-primary btn-block" ng-click="addItem('textarea')">Multiline text box</button></p>
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('multiple')">Multiple choice</button></p>
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('check')">Checkbox</button></p>
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('select')">Dropdown list</button></p>
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('upload')">File upload</button></p>
+  <p><button class="btn btn-primary btn-block" ng-click="addItem('content')">Content block</button></p> -->
+  
+
+</div>
+  <div class="col-md-5">
+<h3>Design</h3>
+<hr>
+
+      <div id="project_details" data-toggle="modal" data-target="#myModal">
+      <h1 id="titleLabel">{{cube.title}}</h1>
+      <p id="descriptionLabel">{{cube.description}}</p>
+      </div>
+
+      <div class="well" ng-repeat="field in project.fields">
+        <field-directive field="field"></field-directive>
+      </div>
+</div>
+<div class="col-md-5">
+
+<h3>Preview</h3>
+<hr>
+<code>{{cube}}</code>
+
+<h3 id="titleLabel">{{cube.title}}</h3>
+        <p id="descriptionLabel">{{cube.description}}</p>
+        <hr>
+        <div ng-repeat="field in cube.attributeList">
+        <preview-directive field="field"></preview-directive>
+        </div>
+
+
+       <button type="button" class="btn btn-success" ng-click="saveCube()">Save</button>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Project title and description -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="proejctTitle">Project title</label>
+          <input type="text" class="form-control" ng-model="cube.title" value="Hello, world!">
+        </div>
+
+        <div class="form-group">
+          <label for="proejctDescription">Project description</label>
+          <textarea class="form-control" rows="3" ng-model="cube.description">Descriptiton</textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="saveCube()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	
+</div>
+</div>
+
+
+
+<!-- javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="assets/js/tether.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<!-- // javascripts -->
+</body>
+</html>

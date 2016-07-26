@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label>{{field.title}}</label>
+
+    <div class="radio" ng-repeat="option in field.options">
+      <label>
+        <input type="radio" name="ff_{{field.id}}" value="option1"> {{option.title}}
+      </label>
+    </div>
+</div>
